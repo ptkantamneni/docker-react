@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  docker build -f -t tejak/docker-react Dockerfile.dev npm run test -- --coverage
+
+script:
+  docker run tejak/docker-react 
