@@ -3,7 +3,7 @@ services:
   - docker
 
 before_install:
-  docker build -f -t tejak/docker-react Dockerfile.dev npm run test -- --coverage
+  docker build -t tejak/docker-react -f Dockerfile.dev .
 
 script:
-  docker run tejak/docker-react 
+  docker run tejak/docker-react npm run test -- --coverage
